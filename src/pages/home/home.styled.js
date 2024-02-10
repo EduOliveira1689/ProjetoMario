@@ -20,7 +20,6 @@ export const Container = styled.div`
   }
 `;
 
-
 export const DescriptionMovie = styled.div`
   display: flex;
   flex-direction: column;
@@ -45,11 +44,10 @@ export const MarioLuigi = styled.img`
   height: auto;
 
   @media screen and (max-width: 768px) {
-  width: 200px;
-  height: 220px;
-  margin-top: 20px;
+    width: 200px;
+    height: 220px;
+    margin-top: 20px;
   }
-
 `;
 
 export const BuyButton = styled.button`
@@ -69,4 +67,3 @@ export const BuyButton = styled.button`
     color: aliceblue;
   }
 `;
-

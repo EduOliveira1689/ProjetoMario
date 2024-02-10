@@ -6,7 +6,11 @@ import { StyledBurguerIcon } from "./hamburguerIcon.styled";
 function HamburgerIcon({ onClick }) {
   return (
     <StyledBurguerIcon onClick={onClick}>
-      <FontAwesomeIcon icon={faBars} size="2x" style={{ color: "aliceblue", cursor: "pointer" }} />
+      <FontAwesomeIcon
+        icon={faBars}
+        size="2x"
+        style={{ color: "aliceblue", cursor: "pointer" }}
+      />
     </StyledBurguerIcon>
   );
 }

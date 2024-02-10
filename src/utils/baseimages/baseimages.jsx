@@ -1,31 +1,30 @@
-import Img1 from "../../assets/wallpapers/1.jpg"
-import Img2 from "../../assets/wallpapers/2.jpg"
-import Img3 from "../../assets/wallpapers/3.jpg"
-import Img4 from "../../assets/wallpapers/4.jpg"
-import Img5 from "../../assets/wallpapers/5.jpeg"
-import Img6 from "../../assets/wallpapers/6.jpg"
-import Img7 from "../../assets/wallpapers/7.jpeg"
-import Img8 from "../../assets/wallpapers/8.png"
-import Img9 from "../../assets/wallpapers/9.png"
-import Img10 from "../../assets/wallpapers/10.png"
-import Img11 from "../../assets/wallpapers/11.png"
-import Img12 from "../../assets/wallpapers/12.png"
-import Img13 from "../../assets/wallpapers/13.png"
-import Img14 from "../../assets/wallpapers/14.jpg"
-import Img15 from "../../assets/wallpapers/15.png"
-import Img16 from "../../assets/wallpapers/16.png"
-import Img17 from "../../assets/wallpapers/17.png"
-import Img18 from "../../assets/wallpapers/18.webp"
-import Img19 from "../../assets/wallpapers/19.jpeg"
-import Img20 from "../../assets/wallpapers/20.webp"
-import Img21 from "../../assets/wallpapers/21.webp"
-import Img22 from "../../assets/wallpapers/22.jpg"
-import Img23 from "../../assets/wallpapers/23.webp"
-import Img24 from "../../assets/wallpapers/24.jpg"
-import Img25 from "../../assets/wallpapers/25.webp"
-import Img26 from "../../assets/wallpapers/26.jpg"
-import Img27 from "../../assets/wallpapers/27.jpg"
-
+import Img1 from "../../assets/wallpapers/1.jpg";
+import Img2 from "../../assets/wallpapers/2.jpg";
+import Img3 from "../../assets/wallpapers/3.jpg";
+import Img4 from "../../assets/wallpapers/4.jpg";
+import Img5 from "../../assets/wallpapers/5.jpeg";
+import Img6 from "../../assets/wallpapers/6.jpg";
+import Img7 from "../../assets/wallpapers/7.jpeg";
+import Img8 from "../../assets/wallpapers/8.png";
+import Img9 from "../../assets/wallpapers/9.png";
+import Img10 from "../../assets/wallpapers/10.png";
+import Img11 from "../../assets/wallpapers/11.png";
+import Img12 from "../../assets/wallpapers/12.png";
+import Img13 from "../../assets/wallpapers/13.png";
+import Img14 from "../../assets/wallpapers/14.jpg";
+import Img15 from "../../assets/wallpapers/15.png";
+import Img16 from "../../assets/wallpapers/16.png";
+import Img17 from "../../assets/wallpapers/17.png";
+import Img18 from "../../assets/wallpapers/18.webp";
+import Img19 from "../../assets/wallpapers/19.jpeg";
+import Img20 from "../../assets/wallpapers/20.webp";
+import Img21 from "../../assets/wallpapers/21.webp";
+import Img22 from "../../assets/wallpapers/22.jpg";
+import Img23 from "../../assets/wallpapers/23.webp";
+import Img24 from "../../assets/wallpapers/24.jpg";
+import Img25 from "../../assets/wallpapers/25.webp";
+import Img26 from "../../assets/wallpapers/26.jpg";
+import Img27 from "../../assets/wallpapers/27.jpg";
 
 export const ImagesServ = [
   { img: Img1 },
@@ -55,4 +54,4 @@ export const ImagesServ = [
   { img: Img25 },
   { img: Img26 },
   { img: Img27 },
-]
+];
