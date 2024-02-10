@@ -13,7 +13,6 @@ const App = () => {
   const [selectedSong, setSelectedSong] = useState(null);
 
   const onPlaySong = (song) => {
-    console.log(song);
     setSelectedSong(song);
   };
 
