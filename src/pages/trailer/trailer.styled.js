@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledVideo = styled.video`
   width: 100%;
@@ -11,7 +11,7 @@ export const StyledVideo = styled.video`
   object-fit: cover;
   z-index: 2;
   border-radius: 10px;
- `;
+`;
 
 export const VideoContainer = styled.div`
   position: absolute;
@@ -20,9 +20,9 @@ export const VideoContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%; 
+  width: 60%;
   cursor: pointer;
-  z-index: 2; 
+  z-index: 2;
 `;
 
 export const ButtonContainer = styled.div`

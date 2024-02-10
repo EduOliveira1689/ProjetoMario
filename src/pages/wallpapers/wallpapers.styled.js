@@ -7,28 +7,27 @@ export const WallpaperContainer = styled.div`
   transform: translateX(-50%);
   width: 90%;
   max-height: 80%;
-  overflow-y: auto; 
+  overflow-y: auto;
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
 
   &:hover {
-    cursor: grabbing; 
+    cursor: grabbing;
   }
 
-  transition: cursor 0.3s ease;  
-    &::-webkit-scrollbar {
+  transition: cursor 0.3s ease;
+  &::-webkit-scrollbar {
     width: 0px;
     transition: width 0.3s ease;
     overflow: hidden;
   }
 
   @media screen and (max-width: 768px) {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
-  
 `;
 
 export const Loader = styled.img`
@@ -43,7 +42,7 @@ export const Loader = styled.img`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    height: 300px ;
+    height: 300px;
   }
 `;
 
@@ -74,9 +73,7 @@ export const ModalContainer = styled.div`
   @media screen and (max-width: 768px) {
     display: none;
   }
-
 `;
-
 
 export const ModalContent = styled.div`
   position: relative;
@@ -92,7 +89,7 @@ export const ImageContainer = styled.div`
 
 export const Image = styled.img`
   max-width: calc(100vw - 200px);
-  max-height: calc(100vh - 200px); 
+  max-height: calc(100vh - 200px);
 `;
 
 export const CloseButton = styled.button`
@@ -103,7 +100,7 @@ export const CloseButton = styled.button`
   border: none;
   cursor: pointer;
   z-index: 99999;
-  color: aliceblue; 
+  color: aliceblue;
   font-size: 16px;
   font-weight: bold;
 `;
@@ -114,8 +111,8 @@ export const NavigationButton = styled.button`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
   border: none;
   cursor: pointer;
-  color: aliceblue; 
-  font-size: 24px; 
+  color: aliceblue;
+  font-size: 24px;
   transition: 0.3s;
   z-index: 2;
   height: 100%;
@@ -132,7 +129,7 @@ export const LeftArrow = styled(NavigationButton)`
     left: 0;
     width: 25px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: 0.3s;
     z-index: -1;
@@ -154,7 +151,7 @@ export const RightArrow = styled(NavigationButton)`
     right: 0;
     width: 25px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: 0.3s;
     z-index: -1;

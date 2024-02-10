@@ -33,11 +33,12 @@ export const CapImg = styled.img`
 export const RotatingCapImg = styled.img`
   ${baseStyles};
   &:hover {
-    animation: ${rotateAnimation} 1.5s linear infinite, ${jumpAnimation} 1.5s ease-in-out infinite;
+    animation: ${rotateAnimation} 1.5s linear infinite,
+      ${jumpAnimation} 1.5s ease-in-out infinite;
   }
 
   @media screen and (max-width: 768px) {
- display: none;
+    display: none;
   }
 `;
 
@@ -52,13 +53,12 @@ export const Container = styled.div`
   left: 0;
   z-index: 15;
 
-
   &.player-visible {
     position: fixed;
   }
 
   @media screen and (max-width: 768px) {
-  background-color: black;
+    background-color: black;
   }
 `;
 
@@ -74,7 +74,7 @@ export const NavigationGroup = styled.div`
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  
+
   @media screen and (max-width: 768px) {
     justify-content: flex-start;
     left: 80%;
@@ -88,10 +88,9 @@ export const SocialContainer = styled.div`
   margin-right: 10px;
 
   @media screen and (max-width: 768px) {
-    justify-content: flex-end; 
+    justify-content: flex-end;
   }
 `;
-
 
 export const ClosePlayerButton = styled.button`
   font-size: 14px;
@@ -111,7 +110,7 @@ export const ClosePlayerButton = styled.button`
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  `;
+`;
 
 export const NavigationContainer = styled.ul`
   display: flex;
@@ -122,15 +121,14 @@ export const NavigationContainer = styled.ul`
   list-style: none;
 
   @media screen and (max-width: 768px) {
-   display: none;
+    display: none;
   }
 `;
-
 
 export const SocialIcon = styled.svg`
   width: 25px;
   height: 20px;
-  fill: #EDF1F7;
+  fill: #edf1f7;
   opacity: 0.6;
   transition: opacity 0.3s, transform 0.3s;
 
@@ -177,24 +175,20 @@ export const SubMenuContainer = styled.div`
   @media screen and (max-width: 768px) {
     left: 0;
     top: 150px;
-   
+
     ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-  }
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+    }
 
-  li {
-    color: aliceblue;
-    font-weight: bold;
+    li {
+      color: aliceblue;
+      font-weight: bold;
+    }
   }
-
-  }
-
 `;
-
-
 
 export const SubMenuContainerMobile = styled.div`
   position: absolute;
@@ -206,7 +200,7 @@ export const SubMenuContainerMobile = styled.div`
   z-index: 10;
   border-radius: 8px;
 
-  li{
+  li {
     list-style: none;
     left: 20px;
     margin-top: 8px;
@@ -246,7 +240,7 @@ export const NavigationLink = styled.li`
   }
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: -2px;
