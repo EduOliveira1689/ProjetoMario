@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css, keyframes } from "styled-components";
 
 const jumpAnimation = keyframes`
@@ -254,4 +255,9 @@ export const NavigationLink = styled.li`
   &:hover:after {
     transform: scaleX(1);
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `;

@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import {
   Container,
@@ -14,6 +13,7 @@ import {
   ThemeButton,
   ClosePlayerButton,
   SubMenuContainerMobile,
+  StyledLink,
 } from "./header.styled";
 import imgCap from "../../assets/logo-cap.png";
 import HamburgerIcon from "../hamburguerIcon/hamburguerIcon";
@@ -23,53 +23,54 @@ function MobileNavigation({ onClose }) {
   const handleLinkClick = () => {
     onClose();
   };
+
   return (
     <SubMenuContainerMobile>
       <RotatingCapImg src={imgCap} alt="Imagem Cap" />
       <NavigationLink>
-        <Link
-          to="/"
-          style={{ textDecoration: "none", color: "inherit" }}
-          onClick={handleLinkClick}
-        >
+        <StyledLink to="/" onClick={handleLinkClick}>
           Home
-        </Link>
+        </StyledLink>
       </NavigationLink>
       <NavigationLink>
-        <Link
-          to="story"
-          style={{ textDecoration: "none", color: "inherit" }}
-          onClick={handleLinkClick}
-        >
+        <StyledLink to="story" onClick={handleLinkClick}>
           História
-        </Link>
+        </StyledLink>
       </NavigationLink>
       <NavigationLink>
-        <Link
-          to="wallpapers"
-          style={{ textDecoration: "none", color: "inherit" }}
-          onClick={handleLinkClick}
-        >
+        <StyledLink to="wallpapers" onClick={handleLinkClick}>
           Wallpapers
-        </Link>
+        </StyledLink>
       </NavigationLink>
       <NavigationLink>
-        <Link
-          to="trailer"
-          style={{ textDecoration: "none", color: "inherit" }}
-          onClick={handleLinkClick}
-        >
+        <StyledLink to="trailer" onClick={handleLinkClick}>
           Trailer
-        </Link>
+        </StyledLink>
       </NavigationLink>
     </SubMenuContainerMobile>
   );
 }
-//passa o onCloseSound, bora caraa, passa como props esse cara aqui  -> =>
 
 function Header({ onStopPlayer, onPlaySong, selectedSong }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isSubMenuVisible &&
+        !document.getElementById("header").contains(event.target)
+      ) {
+        setIsSubMenuVisible(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  });
 
   const handlePlaySong = (song) => {
     onPlaySong(song);
@@ -86,38 +87,21 @@ function Header({ onStopPlayer, onPlaySong, selectedSong }) {
   };
 
   return (
-    <Container>
+    <Container id="header">
       <NavigationGroup>
         <RotatingCapImg src={imgCap} alt="Imagem Cap" />
         <NavigationContainer>
           <NavigationLink>
-            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-              Home
-            </Link>
+            <StyledLink to="/">Home</StyledLink>
           </NavigationLink>
           <NavigationLink>
-            <Link
-              to="/story"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Story
-            </Link>
+            <StyledLink to="/story">Story</StyledLink>
           </NavigationLink>
           <NavigationLink>
-            <Link
-              to="/wallpapers"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Wallpapers
-            </Link>
+            <StyledLink to="/wallpapers">Wallpapers</StyledLink>
           </NavigationLink>
           <NavigationLink>
-            <Link
-              to="/trailer"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Trailer
-            </Link>
+            <StyledLink to="/trailer">Trailer</StyledLink>
           </NavigationLink>
           <NavigationLink>
             <ThemeButton onClick={() => setIsSubMenuVisible(!isSubMenuVisible)}>

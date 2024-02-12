@@ -11,18 +11,18 @@ import {
   RightArrow,
   Loader,
 } from "./wallpapers.styled";
-import { ImagesServ } from "../../utils/baseImages/baseImages";
+import { ImagesServ } from "../../utils/baseImages/baseimages";
 import ImgLoading from "../../assets/loading.gif";
 
 function Wallpapers() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const [removeLoading, setRemoveLoading] = useState(true);
 
   useEffect(() => {
     const delay = setTimeout(() => {
-      setIsLoading(false);
-    }, 2600);
+      setRemoveLoading(false);
+    }, 3000);
 
     return () => clearTimeout(delay);
   }, []);
@@ -50,7 +50,7 @@ function Wallpapers() {
 
   return (
     <>
-      {isLoading ? (
+      {removeLoading ? (
         <Loader src={ImgLoading} alt="Loading..." />
       ) : (
         <WallpaperContainer>
