@@ -10,17 +10,17 @@ import {
 import videoSourceDub from "../../assets/trailer/trailer.mp4";
 import videoSourceLeg from "../../assets/trailer/trailerLEG.mp4";
 
-function Trailer({ onSelectLanguage }) { 
+function Trailer({ onStopPlayer }) {
   const handleSelectDublado = () => {
     setSelectedVideo(videoSourceDub);
     setLanguageSelected(true);
-    onSelectLanguage(); 
+    onStopPlayer();
   };
 
   const handleSelectLegendado = () => {
     setSelectedVideo(videoSourceLeg);
     setLanguageSelected(true);
-    onSelectLanguage(); 
+    onStopPlayer(); // 3. Chamando a função onSelectLanguage ao selecionar o idioma
   };
 
   const handleGoBack = () => {
@@ -49,7 +49,9 @@ function Trailer({ onSelectLanguage }) {
       {!selectedVideo && (
         <ButtonContainer>
           <DubladoButton onClick={handleSelectDublado}>Dublado</DubladoButton>
-          <LegendadoButton onClick={handleSelectLegendado}>Legendado</LegendadoButton>
+          <LegendadoButton onClick={handleSelectLegendado}>
+            Legendado
+          </LegendadoButton>
         </ButtonContainer>
       )}
     </VideoContainer>

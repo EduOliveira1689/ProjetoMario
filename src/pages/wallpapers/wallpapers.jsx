@@ -11,18 +11,18 @@ import {
   RightArrow,
   Loader,
 } from "./wallpapers.styled";
-import { ImagesServ } from "../../utils/baseimages/baseimages";
+import { ImagesServ } from "../../utils/baseImages/baseimages";
 import ImgLoading from "../../assets/loading.gif";
 
 function Wallpapers() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const [removeLoading, setRemoveLoading] = useState(true);
 
   useEffect(() => {
     const delay = setTimeout(() => {
-      setIsLoading(false);
-    }, 2600);
+      setRemoveLoading(false);
+    }, 3000);
 
     return () => clearTimeout(delay);
   }, []);
@@ -37,21 +37,30 @@ function Wallpapers() {
   };
 
   const goToPreviousImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? ImagesServ.length - 1 : prevIndex - 1));
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? ImagesServ.length - 1 : prevIndex - 1
+    );
   };
 
   const goToNextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex === ImagesServ.length - 1 ? 0 : prevIndex + 1));
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === ImagesServ.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
     <>
-      {isLoading ? (
+      {removeLoading ? (
         <Loader src={ImgLoading} alt="Loading..." />
       ) : (
         <WallpaperContainer>
           {ImagesServ.map((item, index) => (
-            <WallpaperImage key={index} src={item.img} alt={`Wallpaper ${index}`} onClick={() => openModal(index)} />
+            <WallpaperImage
+              key={index}
+              src={item.img}
+              alt={`Wallpaper ${index}`}
+              onClick={() => openModal(index)}
+            />
           ))}
         </WallpaperContainer>
       )}
@@ -62,8 +71,8 @@ function Wallpapers() {
             <CloseButton onClick={closeModal}>FECHAR</CloseButton>
             <ImageContainer>
               <Image src={ImagesServ[currentImageIndex].img} />
-              <LeftArrow onClick={goToPreviousImage}>{'<'}</LeftArrow>
-              <RightArrow onClick={goToNextImage}>{'>'}</RightArrow>
+              <LeftArrow onClick={goToPreviousImage}>{"<"}</LeftArrow>
+              <RightArrow onClick={goToNextImage}>{">"}</RightArrow>
             </ImageContainer>
           </ModalContent>
         </ModalContainer>
