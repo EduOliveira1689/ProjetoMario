@@ -11,18 +11,27 @@ import {
   SubMenuContainer,
   SubMenuItem,
   ThemeButton,
+  ThemeButtonMobile,
   ClosePlayerButton,
   SubMenuContainerMobile,
   StyledLink,
+  ClosePlayerButtonMobile,
 } from "./header.styled";
 import imgCap from "../../assets/logo-cap.png";
 import HamburgerIcon from "../hamburguerIcon/hamburguerIcon";
 import { playlist } from "../../utils/baseAudio";
 
-function MobileNavigation({ onClose }) {
+function MobileNavigation({ onClose, onStopPlayer, onPlay, selectedSong }) {
   const handleLinkClick = () => {
     onClose();
   };
+
+  const handlePlaySong = (song) => {
+    onPlay(song);
+    onClose();
+  };
+
+  const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
 
   return (
     <SubMenuContainerMobile>
@@ -47,6 +56,31 @@ function MobileNavigation({ onClose }) {
           Trailer
         </StyledLink>
       </NavigationLink>
+      <ThemeButtonMobile onClick={() => setIsSubMenuVisible(!isSubMenuVisible)}>
+        Musicas Tema
+      </ThemeButtonMobile>
+      {isSubMenuVisible && (
+        <SubMenuContainer>
+          <ul>
+            {playlist.map((song) => (
+              <SubMenuItem
+                key={song.title}
+                className="submenu-item"
+                onClick={() => handlePlaySong(song)}
+              >
+                {song.title}
+              </SubMenuItem>
+            ))}
+          </ul>
+        </SubMenuContainer>
+      )}
+      {!!selectedSong && (
+        <div>
+          <ClosePlayerButtonMobile onClick={onStopPlayer}>
+            Para Musica
+          </ClosePlayerButtonMobile>
+        </div>
+      )}
     </SubMenuContainerMobile>
   );
 }
@@ -189,7 +223,13 @@ function Header({ onStopPlayer, onPlaySong, selectedSong }) {
         </SocialContainer>
       </NavigationGroup>
 
-      {isMobileMenuOpen && <MobileNavigation onClose={closeMobileMenu} />}
+      {isMobileMenuOpen && (
+        <MobileNavigation
+          onClose={closeMobileMenu}
+          onPlay={onPlaySong}
+          selectedSong={selectedSong}
+        />
+      )}
       <div style={{ marginLeft: "10px" }}>
         <HamburgerIcon onClick={toggleMobileMenu} />
       </div>

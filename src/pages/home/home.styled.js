@@ -62,8 +62,9 @@ export const BuyButton = styled.button`
   transition: 0.5s;
   margin-left: auto;
 
-  :hover {
-    background-color: red;
-    color: aliceblue;
+  &:hover {
+    background-color: aliceblue;
+    color: #fe0016;
+    border: 2px solid red;
   }
 `;

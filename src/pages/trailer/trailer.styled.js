@@ -44,10 +44,12 @@ export const DubladoButton = styled.button`
   border: none;
   cursor: pointer;
   font-weight: bold;
+  transition: 0.5s;
 
-  :hover {
-    background-color: #fff;
+  &:hover {
+    background-color: aliceblue;
     color: #fe0016;
+    border: 2px solid red;
   }
 `;
 
@@ -61,6 +63,13 @@ export const LegendadoButton = styled.button`
   border: none;
   cursor: pointer;
   font-weight: bold;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: aliceblue;
+    color: #fe0016;
+    border: 2px solid red;
+  }
 `;
 
 export const BackButton = styled.button`
@@ -74,4 +83,10 @@ export const BackButton = styled.button`
   border: none;
   cursor: pointer;
   z-index: 3;
+
+  &:hover {
+    background-color: aliceblue;
+    color: #fe0016;
+    border: 2px solid red;
+  }
 `;

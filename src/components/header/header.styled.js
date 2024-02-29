@@ -113,6 +113,26 @@ export const ClosePlayerButton = styled.button`
   cursor: pointer;
 `;
 
+export const ClosePlayerButtonMobile = styled.button`
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  width: auto;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 5%;
+  margin-top: 100px;
+  border-radius: 5px;
+  background-color: red;
+  color: aliceblue;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+`;
+
 export const NavigationContainer = styled.ul`
   display: flex;
   align-items: center;
@@ -154,6 +174,20 @@ export const ThemeButton = styled.button`
   &:hover {
     color: red;
   }
+`;
+
+export const ThemeButtonMobile = styled.button`
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: aliceblue;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  margin-left: 15px;
+  margin-top: 10px;
 `;
 
 export const SubMenuContainer = styled.div`
